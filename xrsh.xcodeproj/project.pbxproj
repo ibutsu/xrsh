@@ -464,6 +464,7 @@
 				F8C39C3B18BA21D90066144B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8C39C3C18BA21D90066144B /* Build configuration list for PBXNativeTarget "xrshTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +473,7 @@
 				F8C39C3E18BA21D90066144B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,7 +12,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    NSDate *date = [[NSDate alloc] init];
+    NSLog(@"date: %@", date);
+    
+    NSTimeZone *tz = [NSTimeZone systemTimeZone];
+    NSLog(@"timezone: %@", tz);
 }
 
 @end
