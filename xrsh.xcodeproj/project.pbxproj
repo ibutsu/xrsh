@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F834048A18C142B000BDC493 /* Menulet.m in Sources */ = {isa = PBXBuildFile; fileRef = F834048918C142B000BDC493 /* Menulet.m */; };
 		F8C39C0C18BA21D90066144B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C39C0B18BA21D90066144B /* Cocoa.framework */; };
 		F8C39C1618BA21D90066144B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C39C1418BA21D90066144B /* InfoPlist.strings */; };
 		F8C39C1818BA21D90066144B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C39C1718BA21D90066144B /* main.m */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F834048818C142B000BDC493 /* Menulet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menulet.h; sourceTree = "<group>"; };
+		F834048918C142B000BDC493 /* Menulet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menulet.m; sourceTree = "<group>"; };
 		F8C39C0818BA21D90066144B /* xrsh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xrsh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C39C0B18BA21D90066144B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F8C39C0E18BA21D90066144B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 				F8C39C1D18BA21D90066144B /* AppDelegate.h */,
 				F8C39C1E18BA21D90066144B /* AppDelegate.m */,
 				F8C39C2018BA21D90066144B /* MainMenu.xib */,
+				F834048918C142B000BDC493 /* Menulet.m */,
+				F834048818C142B000BDC493 /* Menulet.h */,
 				F8C39C2318BA21D90066144B /* Images.xcassets */,
 				F8C39C1218BA21D90066144B /* Supporting Files */,
 			);
@@ -253,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C39C1F18BA21D90066144B /* AppDelegate.m in Sources */,
+				F834048A18C142B000BDC493 /* Menulet.m in Sources */,
 				F8C39C1818BA21D90066144B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
