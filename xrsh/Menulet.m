@@ -21,18 +21,19 @@
 
 - (IBAction)initClock:(id)sender
 {
-    NSTimeZone *tzLocal = [NSTimeZone localTimeZone];
-    NSTimeZone *tzRemote = [[NSTimeZone alloc] initWithName: @"Australia/Melbourne"];
-    
-    NSInteger tzLocalDiff = [tzLocal secondsFromGMT];
-    NSInteger tzRemoteDiff = [tzRemote secondsFromGMT];
+    NSTimeZone *tz= [[NSTimeZone alloc] initWithName: @"Australia/Melbourne"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat: @"HH:mm"];
+    [dateFormatter setTimeZone: tz];
     
     NSDate *date = [[NSDate alloc] init];
+    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    [self.statusItem setTitle: formattedDate];
 }
 
 - (IBAction)refreshClock
 {
-    // add 60 to remote time && setTitle
+    // ???
 }
 
 - (IBAction)quit:(id)sender
