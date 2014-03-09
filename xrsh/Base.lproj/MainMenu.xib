@@ -20,6 +20,12 @@
         </customObject>
         <menu id="BAg-Th-k6B">
             <items>
+                <menuItem title="Initialise" id="Fvu-ee-Fwg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="initClock" target="OKc-RI-7QI" id="fNc-hQ-8UQ"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" id="VEJ-9p-YWO">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
