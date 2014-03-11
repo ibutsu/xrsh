@@ -19,6 +19,11 @@
     [self.statusItem setMenu: self.menu];
 }
 
+- (void)refreshClock:(NSDateFormatter*)dateFormatter
+{
+    NSLog(@"Test!");
+}
+
 - (IBAction)initClock:(id)sender
 {
     NSTimeZone *tz= [[NSTimeZone alloc] initWithName: @"Australia/Melbourne"];
@@ -28,12 +33,10 @@
     
     NSDate *date = [[NSDate alloc] init];
     NSString *formattedDate = [dateFormatter stringFromDate:date];
-    [self.statusItem setTitle: formattedDate];
-}
-
-- (IBAction)refreshClock
-{
-    // ???
+    
+    int seconds = fmod([date timeIntervalSince1970], 60);
+    sleep(seconds);
+    [self.refreshClock];
 }
 
 - (IBAction)quit:(id)sender
