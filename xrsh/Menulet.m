@@ -19,24 +19,27 @@
     [self.statusItem setMenu: self.menu];
 }
 
-- (void)refreshClock:(NSDateFormatter*)dateFormatter
+- (void)refreshClock:(NSTimer*)timer
 {
-    NSLog(@"Test!");
+    NSString *formattedDate = [[timer userInfo] stringFromDate: [[NSDate alloc] init]];
+    [self.statusItem setTitle: formattedDate];
 }
 
 - (IBAction)initClock:(id)sender
 {
-    NSTimeZone *tz= [[NSTimeZone alloc] initWithName: @"Australia/Melbourne"];
+    NSTimeZone *tz = [[NSTimeZone alloc] initWithName: @"Australia/Melbourne"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: @"HH:mm"];
     [dateFormatter setTimeZone: tz];
     
     NSDate *date = [[NSDate alloc] init];
-    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    NSString *formattedDate = [dateFormatter stringFromDate: date];
+    [self.statusItem setTitle: formattedDate];
     
-    int seconds = fmod([date timeIntervalSince1970], 60);
-    sleep(seconds);
-    [self.refreshClock];
+    // compensation
+    NSInteger seconds = 60 - fmod([date timeIntervalSince1970], 60);
+    [NSTimer scheduledTimerWithTimeInterval:seconds target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:YES];
 }
 
 - (IBAction)quit:(id)sender
