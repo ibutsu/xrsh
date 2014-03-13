@@ -31,15 +31,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: @"HH:mm"];
     [dateFormatter setTimeZone: tz];
-    
-    NSDate *date = [[NSDate alloc] init];
-    NSString *formattedDate = [dateFormatter stringFromDate: date];
-    [self.statusItem setTitle: formattedDate];
-    
-    // compensation
-    NSInteger seconds = 60 - fmod([date timeIntervalSince1970], 60);
-    [NSTimer scheduledTimerWithTimeInterval:seconds target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:YES];
 }
 
 - (IBAction)quit:(id)sender
