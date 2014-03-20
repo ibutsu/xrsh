@@ -17,6 +17,8 @@
     [self.statusItem setTitle: @"相人時"];
     [self.statusItem setEnabled: YES];
     [self.statusItem setMenu: self.menu];
+    
+    [self initClock];
 }
 
 - (void)refreshClock:(NSTimer*)timer
@@ -25,7 +27,7 @@
     [self.statusItem setTitle: formattedDate];
 }
 
-- (IBAction)initClock:(id)sender
+- (void)initClock
 {
     NSTimeZone *tz = [[NSTimeZone alloc] initWithName: @"Australia/Melbourne"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
