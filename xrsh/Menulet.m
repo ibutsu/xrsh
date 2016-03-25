@@ -58,6 +58,7 @@ NSDateFormatter *dateFormatter;
 {
     prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
     [prefWindow showWindow:nil];
+    [prefWindow.window makeKeyAndOrderFront:nil];
 }
 
 - (IBAction)quit:(id)sender
