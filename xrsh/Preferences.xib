@@ -10,14 +10,14 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="相人時" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="gfh-6p-gMg">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-            <rect key="contentRect" x="500" y="400" width="480" height="57"/>
+            <rect key="contentRect" x="500" y="400" width="480" height="95"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="Fy1-id-oXE">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="57"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="95"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ct-On-HEg">
-                        <rect key="frame" x="-2" y="20" width="126" height="17"/>
+                        <rect key="frame" x="-2" y="58" width="126" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Timezone:" id="Qn6-PI-7Px">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -25,7 +25,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CoW-qr-A1F">
-                        <rect key="frame" x="130" y="17" width="315" height="22"/>
+                        <rect key="frame" x="130" y="55" width="315" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="9sc-jJ-kMe">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -39,9 +39,31 @@
                             </binding>
                         </connections>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MfF-dV-iNh">
+                        <rect key="frame" x="-2" y="33" width="126" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="24-hour clock:" id="IW4-q8-bjG">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OoZ-3V-bPO">
+                        <rect key="frame" x="128" y="31" width="22" height="18"/>
+                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Qq7-Jv-0x3">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="NCK-vd-CPE" name="value" keyPath="values.24hour" id="hhO-WU-9LL">
+                                <dictionary key="options">
+                                    <bool key="NSValidatesImmediately" value="YES"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="565" y="544.5"/>
+            <point key="canvasLocation" x="565" y="563.5"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="NCK-vd-CPE"/>
     </objects>

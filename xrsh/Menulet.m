@@ -38,9 +38,11 @@ NSDateFormatter *dateFormatter;
 - (void)initClock
 {
     NSTimeZone *tz = [[NSTimeZone alloc] initWithName: [[NSUserDefaults standardUserDefaults] valueForKey:@"timezone"]];
+    NSString *dateFormat = ([[NSUserDefaults standardUserDefaults] valueForKey:@"24hour"] == 0) ? @"h:mm a" : @"HH:mm";
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"HH:mm"];
+    [dateFormatter setDateFormat: dateFormat];
     [dateFormatter setTimeZone: tz];
+    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:YES];
 }
 
