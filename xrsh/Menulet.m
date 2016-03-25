@@ -10,6 +10,8 @@
 
 @implementation Menulet
 
+NSWindowController *prefWindow;
+
 - (void)awakeFromNib
 {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength];
@@ -17,6 +19,8 @@
     [self.statusItem setTitle: @"相人時"];
     [self.statusItem setEnabled: YES];
     [self.statusItem setMenu: self.menu];
+    
+    prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
     
     [self initClock];
 }
@@ -34,6 +38,11 @@
     [dateFormatter setDateFormat: @"HH:mm"];
     [dateFormatter setTimeZone: tz];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:YES];
+}
+
+- (IBAction)showPreferences:(id)sender
+{
+    [prefWindow showWindow:nil];
 }
 
 - (IBAction)quit:(id)sender

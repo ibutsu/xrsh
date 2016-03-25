@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="494" customClass="AppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="OKc-RI-7QI" customClass="Menulet">
@@ -20,10 +21,15 @@
         </customObject>
         <menu id="BAg-Th-k6B">
             <items>
-                <menuItem title="Quit" id="VEJ-9p-YWO">
+                <menuItem title="Preferences" keyEquivalent="," id="VEJ-9p-YWO">
+                    <connections>
+                        <action selector="showPreferences:" target="OKc-RI-7QI" id="8cy-kt-Auh"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" id="jDT-hq-22f">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quit:" target="OKc-RI-7QI" id="FmR-1d-qSI"/>
+                        <action selector="quit:" target="OKc-RI-7QI" id="ovd-BU-o3T"/>
                     </connections>
                 </menuItem>
             </items>

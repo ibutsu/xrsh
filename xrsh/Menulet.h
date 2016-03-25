@@ -13,4 +13,6 @@
 @property (nonatomic, retain) NSStatusItem *statusItem;
 @property (nonatomic, retain) IBOutlet NSMenu *menu;
 
+extern NSWindowController *prefWindow;
+
 @end

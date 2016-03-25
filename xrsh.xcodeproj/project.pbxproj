@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F834048A18C142B000BDC493 /* Menulet.m in Sources */ = {isa = PBXBuildFile; fileRef = F834048918C142B000BDC493 /* Menulet.m */; };
+		F84486FD1CA4451F0028E915 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84486FB1CA4451F0028E915 /* Preferences.xib */; };
 		F8C39C0C18BA21D90066144B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C39C0B18BA21D90066144B /* Cocoa.framework */; };
 		F8C39C1618BA21D90066144B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C39C1418BA21D90066144B /* InfoPlist.strings */; };
 		F8C39C1818BA21D90066144B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C39C1718BA21D90066144B /* main.m */; };
@@ -15,7 +16,6 @@
 		F8C39C1F18BA21D90066144B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C39C1E18BA21D90066144B /* AppDelegate.m */; };
 		F8C39C2218BA21D90066144B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8C39C2018BA21D90066144B /* MainMenu.xib */; };
 		F8C39C2418BA21D90066144B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C39C2318BA21D90066144B /* Images.xcassets */; };
-		F8C39C2B18BA21D90066144B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C39C2A18BA21D90066144B /* XCTest.framework */; };
 		F8C39C2C18BA21D90066144B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C39C0B18BA21D90066144B /* Cocoa.framework */; };
 		F8C39C3418BA21D90066144B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C39C3218BA21D90066144B /* InfoPlist.strings */; };
 		F8C39C3618BA21D90066144B /* xrshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C39C3518BA21D90066144B /* xrshTests.m */; };
@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		F834048818C142B000BDC493 /* Menulet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menulet.h; sourceTree = "<group>"; };
 		F834048918C142B000BDC493 /* Menulet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menulet.m; sourceTree = "<group>"; };
+		F84486FB1CA4451F0028E915 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		F8C39C0818BA21D90066144B /* xrsh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xrsh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C39C0B18BA21D90066144B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F8C39C0E18BA21D90066144B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,7 +50,6 @@
 		F8C39C2118BA21D90066144B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F8C39C2318BA21D90066144B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F8C39C2918BA21D90066144B /* xrshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xrshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8C39C2A18BA21D90066144B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F8C39C3118BA21D90066144B /* xrshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "xrshTests-Info.plist"; sourceTree = "<group>"; };
 		F8C39C3318BA21D90066144B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8C39C3518BA21D90066144B /* xrshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xrshTests.m; sourceTree = "<group>"; };
@@ -69,7 +69,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C39C2C18BA21D90066144B /* Cocoa.framework in Frameworks */,
-				F8C39C2B18BA21D90066144B /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				F8C39C0B18BA21D90066144B /* Cocoa.framework */,
-				F8C39C2A18BA21D90066144B /* XCTest.framework */,
 				F8C39C0D18BA21D90066144B /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -120,6 +118,7 @@
 			children = (
 				F8C39C1D18BA21D90066144B /* AppDelegate.h */,
 				F8C39C1E18BA21D90066144B /* AppDelegate.m */,
+				F84486FB1CA4451F0028E915 /* Preferences.xib */,
 				F8C39C2018BA21D90066144B /* MainMenu.xib */,
 				F834048918C142B000BDC493 /* Menulet.m */,
 				F834048818C142B000BDC493 /* Menulet.h */,
@@ -203,7 +202,7 @@
 		F8C39C0018BA21D90066144B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Cuties' Egalitarian Front";
 				TargetAttributes = {
 					F8C39C2818BA21D90066144B = {
@@ -235,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84486FD1CA4451F0028E915 /* Preferences.xib in Resources */,
 				F8C39C1618BA21D90066144B /* InfoPlist.strings in Resources */,
 				F8C39C2418BA21D90066144B /* Images.xcassets in Resources */,
 				F8C39C1C18BA21D90066144B /* Credits.rtf in Resources */,
@@ -333,6 +333,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -393,6 +394,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "xrsh/xrsh-Prefix.pch";
 				INFOPLIST_FILE = "xrsh/xrsh-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "cef.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +408,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "xrsh/xrsh-Prefix.pch";
 				INFOPLIST_FILE = "xrsh/xrsh-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "cef.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -427,6 +430,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "xrshTests/xrshTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "cef.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -445,6 +449,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "xrsh/xrsh-Prefix.pch";
 				INFOPLIST_FILE = "xrshTests/xrshTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "cef.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
