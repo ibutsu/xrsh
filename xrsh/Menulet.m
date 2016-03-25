@@ -26,8 +26,6 @@ NSDateFormatter *dateFormatter;
                                                options:NSKeyValueObservingOptionNew
                                                context:NULL];
     
-    prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
-    
     [self initClock];
 }
 
@@ -58,6 +56,7 @@ NSDateFormatter *dateFormatter;
 
 - (IBAction)showPreferences:(id)sender
 {
+    prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
     [prefWindow showWindow:nil];
 }
 
