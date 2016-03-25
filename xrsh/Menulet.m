@@ -11,6 +11,7 @@
 @implementation Menulet
 
 NSWindowController *prefWindow;
+NSDateFormatter *dateFormatter;
 
 - (void)awakeFromNib
 {
@@ -19,6 +20,11 @@ NSWindowController *prefWindow;
     [self.statusItem setTitle: @"相人時"];
     [self.statusItem setEnabled: YES];
     [self.statusItem setMenu: self.menu];
+    
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:@"timezone"
+                                               options:NSKeyValueObservingOptionNew
+                                               context:NULL];
     
     prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
     
@@ -34,10 +40,20 @@ NSWindowController *prefWindow;
 - (void)initClock
 {
     NSTimeZone *tz = [[NSTimeZone alloc] initWithName: [[NSUserDefaults standardUserDefaults] valueForKey:@"timezone"]];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: @"HH:mm"];
     [dateFormatter setTimeZone: tz];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshClock:) userInfo:dateFormatter repeats:YES];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context {
+    // called on every change. (if you called addObserver: multiple times
+    // for different keys, check "keyPath" to see which one changed.)
+    NSString *newValue = change[NSKeyValueChangeNewKey];
+    NSLog(@"KVO: property %@ changed to %@", keyPath, newValue);
+    [dateFormatter setTimeZone: [[NSTimeZone alloc] initWithName:newValue]];
 }
 
 - (IBAction)showPreferences:(id)sender
@@ -45,13 +61,15 @@ NSWindowController *prefWindow;
     [prefWindow showWindow:nil];
 }
 
-- (IBAction)savePreferences:(id)sender
-{
-}
-
 - (IBAction)quit:(id)sender
 {
     [NSApp terminate: sender];
+}
+
+- (void)dealloc
+{
+    [[NSUserDefaults standardUserDefaults] removeObserver:self
+                                               forKeyPath:@"timezone"];
 }
 
 @end
