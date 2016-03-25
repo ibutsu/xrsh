@@ -10,6 +10,7 @@
 
 @implementation Menulet
 
+NSWindowController *prefWindow;
 NSDateFormatter *dateFormatter;
 
 - (void)awakeFromNib
@@ -23,7 +24,10 @@ NSDateFormatter *dateFormatter;
     [[NSUserDefaults standardUserDefaults] addObserver:self
                                             forKeyPath:@"timezone"
                                                options:NSKeyValueObservingOptionNew
-                                               context:NULL];    
+                                               context:NULL];
+    
+    prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
+    
     [self initClock];
 }
 
@@ -54,7 +58,6 @@ NSDateFormatter *dateFormatter;
 
 - (IBAction)showPreferences:(id)sender
 {
-    NSWindowController *prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
     [prefWindow showWindow:nil];
 }
 
