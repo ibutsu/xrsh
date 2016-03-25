@@ -21,7 +21,8 @@
         </customObject>
         <menu id="BAg-Th-k6B">
             <items>
-                <menuItem title="Preferences" keyEquivalent="," id="VEJ-9p-YWO">
+                <menuItem title="Preferences" id="VEJ-9p-YWO">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="showPreferences:" target="OKc-RI-7QI" id="8cy-kt-Auh"/>
                     </connections>

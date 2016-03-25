@@ -33,7 +33,7 @@ NSWindowController *prefWindow;
 
 - (void)initClock
 {
-    NSTimeZone *tz = [[NSTimeZone alloc] initWithName: @"Australia/Melbourne"];
+    NSTimeZone *tz = [[NSTimeZone alloc] initWithName: [[NSUserDefaults standardUserDefaults] valueForKey:@"timezone"]];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: @"HH:mm"];
     [dateFormatter setTimeZone: tz];
@@ -43,6 +43,10 @@ NSWindowController *prefWindow;
 - (IBAction)showPreferences:(id)sender
 {
     [prefWindow showWindow:nil];
+}
+
+- (IBAction)savePreferences:(id)sender
+{
 }
 
 - (IBAction)quit:(id)sender
