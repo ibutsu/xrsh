@@ -5,7 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindowController"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindowController">
+            <connections>
+                <outlet property="window" destination="gfh-6p-gMg" id="HKD-la-iIT"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="相人時" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="gfh-6p-gMg">
@@ -63,7 +67,7 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="565" y="563.5"/>
+            <point key="canvasLocation" x="398" y="421.5"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="NCK-vd-CPE"/>
     </objects>

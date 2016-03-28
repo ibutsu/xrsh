@@ -1,8 +1,9 @@
 #import "Menulet.h"
+#import "PreferencesWindowController.h"
 
 @implementation Menulet
 
-NSWindowController *prefWindow;
+PreferencesWindowController *prefWindow;
 NSDateFormatter *dateFormatter;
 
 - (void)awakeFromNib
@@ -59,9 +60,9 @@ NSDateFormatter *dateFormatter;
 
 - (IBAction)showPreferences:(id)sender
 {
-    prefWindow = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
+    prefWindow = [[PreferencesWindowController alloc] initWithWindowNibName:@"Preferences"];
     [prefWindow showWindow:nil];
-    [prefWindow.window makeKeyAndOrderFront:nil];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
 - (IBAction)quit:(id)sender

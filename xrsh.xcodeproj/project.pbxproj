@@ -19,6 +19,7 @@
 		F8C39C2C18BA21D90066144B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C39C0B18BA21D90066144B /* Cocoa.framework */; };
 		F8C39C3418BA21D90066144B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C39C3218BA21D90066144B /* InfoPlist.strings */; };
 		F8C39C3618BA21D90066144B /* xrshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C39C3518BA21D90066144B /* xrshTests.m */; };
+		F8F43FA11CA94C180090E1BF /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F43FA01CA94C180090E1BF /* PreferencesWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		F8C39C3118BA21D90066144B /* xrshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "xrshTests-Info.plist"; sourceTree = "<group>"; };
 		F8C39C3318BA21D90066144B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8C39C3518BA21D90066144B /* xrshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xrshTests.m; sourceTree = "<group>"; };
+		F8F43F9F1CA94C180090E1BF /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		F8F43FA01CA94C180090E1BF /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				F8C39C2018BA21D90066144B /* MainMenu.xib */,
 				F834048818C142B000BDC493 /* Menulet.h */,
 				F834048918C142B000BDC493 /* Menulet.m */,
+				F8F43F9F1CA94C180090E1BF /* PreferencesWindowController.h */,
+				F8F43FA01CA94C180090E1BF /* PreferencesWindowController.m */,
 				F8C39C2318BA21D90066144B /* Images.xcassets */,
 				F8C39C1218BA21D90066144B /* Supporting Files */,
 			);
@@ -259,6 +264,7 @@
 			files = (
 				F8C39C1F18BA21D90066144B /* AppDelegate.m in Sources */,
 				F834048A18C142B000BDC493 /* Menulet.m in Sources */,
+				F8F43FA11CA94C180090E1BF /* PreferencesWindowController.m in Sources */,
 				F8C39C1818BA21D90066144B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
