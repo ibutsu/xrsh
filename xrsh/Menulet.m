@@ -26,6 +26,11 @@ NSDateFormatter *dateFormatter;
                                                options:NSKeyValueObservingOptionNew
                                                context:NULL];
     
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:@"24hour"
+                                               options:NSKeyValueObservingOptionNew
+                                               context:NULL];
+    
     [self initClock];
 }
 
@@ -38,7 +43,7 @@ NSDateFormatter *dateFormatter;
 - (void)initClock
 {
     NSTimeZone *tz = [[NSTimeZone alloc] initWithName: [[NSUserDefaults standardUserDefaults] valueForKey:@"timezone"]];
-    NSString *dateFormat = ([[[NSUserDefaults standardUserDefaults] valueForKey:@"24hour"] isEqual:@NO]) ? @"h:mm a" : @"HH:mm";
+    NSString *dateFormat = [[[NSUserDefaults standardUserDefaults] valueForKey:@"24hour"] isEqual:@NO] ? @"h:mm a" : @"HH:mm";
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: dateFormat];
     [dateFormatter setTimeZone: tz];
@@ -49,11 +54,16 @@ NSDateFormatter *dateFormatter;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
                         change:(NSDictionary<NSString *,id> *)change
                        context:(void *)context {
-    // called on every change. (if you called addObserver: multiple times
-    // for different keys, check "keyPath" to see which one changed.)
     NSString *newValue = change[NSKeyValueChangeNewKey];
     NSLog(@"KVO: property %@ changed to %@", keyPath, newValue);
-    [dateFormatter setTimeZone: [[NSTimeZone alloc] initWithName:newValue]];
+    
+    if ([keyPath isEqualToString: @"timezone"]) {
+        [dateFormatter setTimeZone: [[NSTimeZone alloc] initWithName:newValue]];
+    } else if ([keyPath isEqualToString: @"24hour"]) {
+        NSString *dateFormat = [newValue isEqual:@NO] ? @"h:mm a" : @"HH:mm";
+        [dateFormatter setDateFormat: dateFormat];
+    }
+    
 }
 
 - (IBAction)showPreferences:(id)sender
@@ -72,6 +82,8 @@ NSDateFormatter *dateFormatter;
 {
     [[NSUserDefaults standardUserDefaults] removeObserver:self
                                                forKeyPath:@"timezone"];
+    [[NSUserDefaults standardUserDefaults] removeObserver:self
+                                               forKeyPath:@"24hour"];
 }
 
 @end
