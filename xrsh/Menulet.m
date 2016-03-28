@@ -25,7 +25,6 @@ NSDateFormatter *dateFormatter;
                                             forKeyPath:@"timezone"
                                                options:NSKeyValueObservingOptionNew
                                                context:NULL];
-    
     [[NSUserDefaults standardUserDefaults] addObserver:self
                                             forKeyPath:@"24hour"
                                                options:NSKeyValueObservingOptionNew
@@ -81,9 +80,9 @@ NSDateFormatter *dateFormatter;
 - (void)dealloc
 {
     [[NSUserDefaults standardUserDefaults] removeObserver:self
-                                               forKeyPath:@"timezone"];
-    [[NSUserDefaults standardUserDefaults] removeObserver:self
                                                forKeyPath:@"24hour"];
+    [[NSUserDefaults standardUserDefaults] removeObserver:self
+                                               forKeyPath:@"timezone"];
 }
 
 @end
