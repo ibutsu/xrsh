@@ -120,8 +120,8 @@
 				F8C39C1E18BA21D90066144B /* AppDelegate.m */,
 				F84486FB1CA4451F0028E915 /* Preferences.xib */,
 				F8C39C2018BA21D90066144B /* MainMenu.xib */,
-				F834048918C142B000BDC493 /* Menulet.m */,
 				F834048818C142B000BDC493 /* Menulet.h */,
+				F834048918C142B000BDC493 /* Menulet.m */,
 				F8C39C2318BA21D90066144B /* Images.xcassets */,
 				F8C39C1218BA21D90066144B /* Supporting Files */,
 			);
